@@ -1,0 +1,50 @@
+{
+  "name": "yaoxfly.io",
+  "version": "1.0.0",
+  "description": "yaoxfly的空间",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs  --host",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "preview": "vitepress build docs && vitepress serve docs",
+    "docs:dev": "vitepress dev docs --host",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress build docs && vitepress serve docs",
+    "deploy": "bash deploy.sh",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix"
+  },
+  "keywords": [],
+  "author": "yaoxfly",
+  "license": "MIC",
+  "dependencies": {
+    "vue": "3.2.47"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.1",
+    "@types/postcss-import": "^14.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "@vitejs/plugin-legacy": "^4.0.2",
+    "@vitejs/plugin-vue-jsx": "^2.0.0",
+    "autoprefixer": "^10.4.8",
+    "browserslist": "^4.21.5",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "postcss-import": "^14.1.0",
+    "sass": "^1.54.4",
+    "terser": "^5.16.8",
+    "typescript": "^4.7.4",
+    "vite": "^4.2.1",
+    "vite-plugin-eslint": "^1.7.0",
+    "vitepress": "1.0.0-alpha.64",
+    "vue-eslint-parser": "^9.0.3",
+    "vue-tsc": "^0.39.4"
+  }
+}

@@ -1,0 +1,83 @@
+:root {
+  --vp-nav-height-desktop: 60px;
+  --vp-c-text-dark-1: #fff;
+  --vp-c-white-soft: #f4f4f4;
+  --vp-c-black-soft: #2f3133;
+  /*--自定义---*/
+  --custom-c-text-1: var(--vp-c-text-dark-1);
+  --custom-c-nav-bc: rgba(255, 255, 255, 0.7);
+  --custom-c-footer-bc: top;
+  --custom-font-size-title: 18px;
+  --custom-font-size-content: 14px;
+  --custom-font-size-assist: 12px
+}
+
+
+/*******滚动条*********/
+::-webkit-scrollbar-track-piece {
+  background-color: var(--vp-c-bg-mute);
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border-color: transparent;
+  border-style: dashed;
+  border-width: 2px;
+  min-height: 50px;
+  max-height: 100px;
+  border-radius: 4px;
+  background-color: rgba(144, 147, 153, 0.4);
+  transition: background-color 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(144, 147, 153, 0.6);
+  transition: background-color 0.5s;
+}
+
+/*******common*********/
+.common-piece {
+  padding: 16px 20px;
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+}
+
+.common-bold {
+  font-weight: bold
+}
+
+@media (min-width: 960px) {
+  .Layout .VPNavBarMenuLink.active {
+    position: relative;
+  }
+
+  .Layout .VPNavBarMenuLink.active::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    background: var(--vp-c-brand);
+    bottom: 0;
+    left: 0;
+    left: 25%;
+    top: 42px;
+    animation: leftToRight .5s linear;
+  }
+
+  @keyframes leftToRight {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 50%;
+    }
+  }
+}
