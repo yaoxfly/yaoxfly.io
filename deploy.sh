@@ -23,6 +23,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
 
-git push -f https://github.com/yaoxfly/vitepress-template-site.git master:main
+git push -f https://github.com/yaoxfly/yaoxfly.github.io.git master:main
 
 cd -

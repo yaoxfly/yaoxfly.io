@@ -55,7 +55,7 @@ export default defineConfig(
     vite: {
       resolve: {
         alias: {
-          '@': resolve(__dirname, 'docs')
+          '@': resolve(__dirname, './') // 路径相对配置文件,非根路径
         }
       },
       plugins: [
