@@ -5,9 +5,52 @@ export default [
   },
 
   {
-    text: '组件文档',
-    link: '/component/button',
-    activeMatch: '/component/'
+    text: '开源作品',
+    items: [
+      {
+        text: '脚手架/基础框架',
+        items: [
+          {
+            text: '@yaoxfly/cli',
+            link: 'https://github.com/yaoxfly/yaoxfly-cli'
+          },
+          {
+            text: 'vue3-simple-frame',
+            link: 'https://github.com/yaoxfly/vue3-simple-frame'
+          },
+          {
+            text: 'vitepress-template',
+            link: 'https://github.com/yaoxfly/vitepress-template'
+          },
+          {
+            text: 'npm-rollup-babel-template',
+            link: 'https://github.com/yaoxfly/npm-rollup-babel-template'
+          }
+        ]
+      },
+
+      {
+        text: '插件',
+        items: [
+          {
+            text: '@yaoxfly/deploy',
+            link: 'https://github.com/yaoxfly/yaoxfly-deploy'
+          },
+          {
+            text: 'eslint-plugin-expand',
+            link: 'https://github.com/yaoxfly/eslint-plugin-expand'
+          }
+        ]
+      },
+
+      {
+        text: '组件库',
+        items: [{
+          text: '@yaoxfly/eve-ui',
+          link: 'https://yaoxfly.github.io/eve-ui'
+        }]
+      }
+    ]
   },
 
   {
