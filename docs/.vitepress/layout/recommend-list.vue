@@ -1,25 +1,13 @@
 <script setup lang="ts">
-const card = [
-  {
-    number: 1,
-    content: '推荐内容1'
-  },
+import { list } from '@/utils/business'
+import { useRouter, withBase } from 'vitepress'
+const card = list.filter(item => item.recommend)
+card.sort((a, b) => a.recommend && b.recommend && (a.recommend > b.recommend) ? 1 : -1)
+const { go } = useRouter()
+const jump = (path?: string) => {
+  go(withBase(`${path}`))
+}
 
-  {
-    number: 2,
-    content: '推荐内容2'
-  },
-
-  {
-    number: 3,
-    content: '推荐内容3'
-  },
-
-  {
-    number: 4,
-    content: '推荐内容4'
-  }
-]
 </script>
 
 <template>
@@ -28,15 +16,16 @@ const card = [
       v-for="(item, index) in card"
       :key="`card${index}`"
       class="recommend-list__card"
+      @click="jump(item.path)"
     >
       <p
         class="recommend-list__number"
-        :class="[`recommend-list__color-${item.number > 3 ? 4 : item.number}`]"
+        :class="[`recommend-list__color-${item.recommend && item.recommend > 3 ? 4 : item.recommend}`]"
       >
-        {{ item.number }}
+        {{ item.recommend }}
       </p>
       <p class="recommend-list__content">
-        {{ item.content }}
+        {{ item.title }}
       </p>
     </div>
   </div>
@@ -76,6 +65,10 @@ const card = [
     &:hover{
        color: var(--vp-c-brand);
     }
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis
   }
 
   &__color-1 {

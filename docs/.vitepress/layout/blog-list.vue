@@ -3,70 +3,9 @@
 import Card from './card.vue'
 import { onMounted, onUnmounted, ref, computed } from 'vue'
 import { useRouter, withBase } from 'vitepress'
+import { list as lists } from '../utils/business'
 
-const list = [
-  {
-    title: '1',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-01',
-    tag: 'vue'
-  },
-  {
-    title: '2',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-04',
-    tag: 'vue'
-  },
-  {
-    title: '3',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-06',
-    tag: 'vue'
-  },
-  {
-    title: '4',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-12',
-    tag: 'vue'
-  },
-  {
-    title: '5',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-18',
-    tag: 'vue'
-  },
-
-  {
-    title: '6',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-06',
-    tag: 'vue'
-  },
-  {
-    title: '7',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-06',
-    tag: 'vue'
-  },
-  {
-    title: '8',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-20',
-    tag: 'vue'
-  },
-  {
-    title: '9',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-06',
-    tag: 'vue'
-  },
-  {
-    title: '10',
-    content: '如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码 如何将 Vue2 代码一键转成 Vue3 代码如何将 Vue2 代码一键转成 Vue3 代码',
-    time: '2022-10-30',
-    tag: 'vue'
-  }
-]
+const list = lists
 list.sort((a, b) => a.time < b.time ? 1 : -1)
 interface Data {
   title?: string
@@ -137,10 +76,9 @@ const handleScroll = () => {
     debounce(loadData, 500)
   }
 }
-
 const { go } = useRouter() // 不能写函数里
 const jump = (path?: string) => {
-  go(withBase(`${'/blog/details'}`))
+  go(withBase(`${path}`))
 }
 
 const init = () => {

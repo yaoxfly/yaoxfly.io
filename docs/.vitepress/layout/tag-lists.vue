@@ -1,19 +1,12 @@
 <script setup lang="ts">
 import Tag from './tag.vue'
-const tags = [
-  { tag: 'vue' },
-  { tag: 'React', color: 'rgb(0,216, 255)' },
-  { tag: 'git', color: 'red' },
-  { tag: '工具', color: 'black' },
-  { tag: 'Typescript', color: '#136ec2' },
-  { tag: 'Node.js', color: '#026e00' }
-]
+import { useList } from '../utils/business'
+const { tags } = useList()
 </script>
-
 <template>
   <div class="common-piece tag-list">
     <Tag
-      v-for="(item, index) in tags"
+      v-for="(item, index) in tags.data"
       :key="index"
       class="tag-list-piece"
       :color="item.color"

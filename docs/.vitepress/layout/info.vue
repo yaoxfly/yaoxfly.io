@@ -4,6 +4,8 @@
 -->
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
+import { useList } from '../utils/business'
+import { KeyMap } from '../utils/type'
 /** 关注我 背景色 */
 import { StorageSetItemEvent, getPropertyValue } from '../utils/tools'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -13,7 +15,7 @@ const setFocusBac = () => {
   bookmarkBac.value = window.localStorage.getItem('vitepress-theme-appearance') === 'dark' ? '#484848' : getPropertyValue('--vp-c-black')
   storageSetItemEvent = (e: StorageSetItemEvent) => {
     if (e.key === 'vitepress-theme-appearance') {
-      const keyMap = {
+      const keyMap:KeyMap = {
         dark: '#484848',
         auto: getPropertyValue('--vp-c-black')
       }
@@ -22,12 +24,6 @@ const setFocusBac = () => {
   }
   window.addEventListener('storageSetItemEvent', storageSetItemEvent)
 }
-
-onMounted(() => {
-  // ssr window必须写在onMounted生命周期里
-  setFocusBac()
-})
-
 const socialLinks = [
   {
     path: 'https://github.com/yaoxfly',
@@ -47,6 +43,14 @@ type SocialLinks = {
 const jump = (param: SocialLinks) => {
   window.open(param.path)
 }
+
+/** --- 文章、标签信息 ---- */
+const { total, tags: { length: tagLength } } = useList()
+
+onMounted(() => {
+  // ssr window必须写在onMounted生命周期里
+  setFocusBac()
+})
 
 onUnmounted(() => {
   window.removeEventListener('storageSetItemEvent', storageSetItemEvent)
@@ -68,13 +72,13 @@ onUnmounted(() => {
         <section>
           <p>文章</p>
           <p class="common-bold">
-            1
+            {{ total }}
           </p>
         </section>
         <section>
           <p>标签</p>
           <p class="common-bold">
-            1
+            {{ tagLength }}
           </p>
         </section>
       </div>

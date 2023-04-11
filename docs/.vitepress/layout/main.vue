@@ -11,10 +11,10 @@ import RecommendList from './recommend-list.vue'
 
 <template>
   <div class="layout-main">
-    <div class="layout-main__left ">
+    <div class="layout-main__left">
       <BlogList />
     </div>
-    <div class="layout-main__right ">
+    <div class="layout-main__right">
       <Info />
       <RecommendList />
       <TagLists />
@@ -49,7 +49,6 @@ import RecommendList from './recommend-list.vue'
 
     &__left {
       width: calc(76% - 16px);
-
     }
 
     &__right {

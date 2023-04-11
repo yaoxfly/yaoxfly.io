@@ -1,8 +1,7 @@
 
 <script setup lang="ts">
-import { useAttrs } from 'vue'
 import Tag from './tag.vue'
-const attrs = useAttrs()
+import { tags } from '../utils/business'
 const props = defineProps({
   title: {
     type: String,
@@ -22,8 +21,10 @@ const props = defineProps({
     type: String,
     default: () => ''
   }
-
 })
+
+const arr = tags.filter(item => item.tag === props.tag)
+const { color } = arr[0] || {}
 
 </script>
 
@@ -41,7 +42,7 @@ const props = defineProps({
       {{ time }}
     </p>
 
-    <tag v-bind="attrs">
+    <tag :color="color">
       {{ tag }}
     </tag>
   </div>
