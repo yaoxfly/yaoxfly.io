@@ -3,7 +3,7 @@ import { App, onMounted } from 'vue'
 import { dispatchEventStorage } from '../utils/tools'
 import './custom.css'
 import './icon-font/iconfont.css'
-const modules = import.meta.glob('../component/*.vue')
+const modules = import.meta.glob('../component/global/*.vue')
 export default {
   ...DefaultTheme,
   enhanceApp ({ app }: { app: App }) {
