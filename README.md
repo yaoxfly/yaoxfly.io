@@ -1,17 +1,9 @@
 [English](README.md)  | [中文](README-CN.md)
 
-# Introduction
-Based on vitepress, integrates ts, and other simple configurations, themes, etc., out of the box, and a tool for writing documents
+## Introduction
+personal website based on vitepress
 
-# Basic configuration
-+ typescript
-+ Automatically register global components
-+ Eslint
-+ Custom theme
-> ESLint ignored by default . The beginning of the directory, .eslint ignore set in !docs/.vitepress Do not let ignore.vitepress
-
-
-# Use 
+## Use 
 
 Run
 
@@ -35,6 +27,11 @@ pnpm run preview // Run pnpm run build and then run pnpm run serve
 
 > The preview operation can only be performed after packaging
 
-# Demo address
-[Template sample online access (Ctrl+click to open in new tab)](https://yaoxfly.github.io/vitepress-template-site)
 
+## Home page
+[yaoxfly.github.io](https://yaoxfly.github.io)
+
+
+## Expand
+
+[vitepress-template](https://github.com/yaoxfly/vitepress-template)  Based on vitepress, it integrates ts and other simple configurations, custom themes, etc., out of the box
