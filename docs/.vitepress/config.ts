@@ -32,9 +32,9 @@ export default defineConfig(
       outlineTitle: '目录',
       // logo: '/icon/favicon.ico',
       algolia: {
-        appId: 'GMQ8P1YNY9',
-        apiKey: 'b9e3cc055aaccfd108e51ea6a50aa9be',
-        indexName: 'vitepress-template'
+        appId: 'CV35THWYWP',
+        apiKey: 'a49bcf222f55511d81dd45e949b704b9',
+        indexName: 'yaoxflyio'
       },
       lastUpdatedText: '最近更新时间',
       socialLinks: [
