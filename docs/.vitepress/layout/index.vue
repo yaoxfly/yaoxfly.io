@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { StorageSetItemEvent, setProperty, getPropertyValue, imgReady, loadJs } from '@/utils/tools'
+import { StorageSetItemEvent, setProperty, getPropertyValue, imgReady } from '@/utils/tools'
 import Main from './main.vue'
 import { withBase } from 'vitepress'
 import MeteorShower from './meteor-shower.vue'
