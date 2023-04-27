@@ -42,7 +42,7 @@ onMounted(() => {
 <style lang="scss">
 .loading-content {
   position: fixed;
-  z-index: 5;
+  z-index: 9999;
   background: #fff;
   width: 100%;
   height: 100vh;
@@ -51,10 +51,10 @@ onMounted(() => {
     width: 200px;
     height: 60px;
     margin: 0 auto;
-    top: 50%;
+    top: 42%;
     position: relative;
     opacity: 1;
-    animation: show 0.4s;
+    animation: show 0.5s;
   }
 
   @keyframes show {

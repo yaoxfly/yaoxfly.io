@@ -1,22 +1,25 @@
+
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { StorageSetItemEvent, setProperty, getPropertyValue, imgReady } from '../utils/tools'
+import { StorageSetItemEvent, setProperty, getPropertyValue, imgReady, loadJs } from '@/utils/tools'
 import Main from './main.vue'
 import { withBase } from 'vitepress'
 import MeteorShower from './meteor-shower.vue'
 import Loading from './loading.vue'
 
 /** --banner --- */
+const loading = ref(true)
 const num = Math.round(Math.random()) + 1
 const img = withBase(`/home/banner_${num}.jpg`)
 const minImg = withBase(`/home/banner_min_${num}.jpg`)
 const image = ref(`url('${img}') top center no-repeat`)
 const minImage = ref(`url('${minImg}') top center no-repeat`)
-const loading = ref(false)
-loading.value = true
-imgReady([img]).then((res) => {
-  loading.value = false
-})
+const imageReady = () => {
+  imgReady([img]).then((res) => {
+    loading.value = false
+    setProperty('--custom-nav-status', 'block')
+  })
+}
 
 /** --theme --- */
 const theme = ref('')
@@ -92,6 +95,7 @@ const resize = () => {
 }
 
 const init = () => {
+  imageReady()
   const customLayout = document.querySelector('.layout ') as HTMLElement
   const vpNav = document.querySelector('.Layout .VPNav') as HTMLElement
   const Layout = document.querySelector('.Layout') as HTMLElement
@@ -172,9 +176,9 @@ export default {
         padding-bottom: 0;
       }
     }
-
   }
   .VPNav {
+    display: var(--custom-nav-status);
     &.transparent {
       .VPNavBarTitle {
         @media (min-width: 960px) {
