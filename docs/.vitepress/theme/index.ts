@@ -8,6 +8,7 @@ export default {
   ...DefaultTheme,
   enhanceApp ({ app }: { app: App }) {
     for (const path in modules) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       modules[path]().then((value: any) => {
         app.component(value.default.name, value.default)
       })

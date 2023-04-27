@@ -2,6 +2,7 @@ export type StorageSetItemEvent = { key?: string, newValue?: string } & Event
 export const dispatchEventStorage = () => {
   const storage = window.localStorage
   const localStorageMock = {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setItem: (key: string, value: any) => {
       const setEvent: StorageSetItemEvent = new Event('storageSetItemEvent')
       setEvent.key = key
@@ -36,6 +37,7 @@ export const getRoot = () => {
   return window.document.querySelector(':root') as HTMLElement
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const setProperty = (key: string, value: any) => {
   return getRoot().style.setProperty(key, value)
 }
