@@ -28,6 +28,7 @@ export const tags:Tags[] = [
 
 export const useList = () => {
   const set:Set<string> = new Set([])
+
   list.forEach(item => {
     set.add(item.tag)
   })
@@ -38,6 +39,7 @@ export const useList = () => {
       data.unshift(item)
     }
   })
+
   return {
     list,
     total: list.length,

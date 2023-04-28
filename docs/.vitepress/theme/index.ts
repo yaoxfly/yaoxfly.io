@@ -18,7 +18,6 @@ export default {
   setup () {
     const jump = () => {
       const time = String(new Date())
-      console.log(time.includes('GMT+0800') && time.includes('中国'))
       if (time.includes('GMT+0800') && time.includes('中国') && window.location.href.includes('github')) {
         window.location.href = `https://yaoxfly.gitee.io${window.location.pathname}`
       }

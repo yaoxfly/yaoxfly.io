@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import Tag from './tag.vue'
-import { useList } from '../utils/business'
-const { tags } = useList()
+import { useList } from '@/utils/business'
+const emit = defineEmits(['classification'])
+const { tags, list } = useList()
+const classification = (tag:string) => {
+  const lists = list.filter(item => item.tag === tag)
+  emit('classification', { tag, lists })
+}
 </script>
 <template>
   <div class="common-piece tag-list">
@@ -10,6 +15,7 @@ const { tags } = useList()
       :key="index"
       class="tag-list-piece"
       :color="item.color"
+      @click="classification(item.tag)"
     >
       {{ item.tag }}
     </Tag>

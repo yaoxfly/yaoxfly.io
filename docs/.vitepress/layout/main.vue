@@ -7,17 +7,25 @@ import Info from './info.vue'
 import BlogList from './blog-list.vue'
 import TagLists from './tag-lists.vue'
 import RecommendList from './recommend-list.vue'
+import { List } from '@/utils/type'
+import { list } from '@/utils/business'
+import { ref } from 'vue'
+const blogList = ref(list)
+const classification = ({ lists }:{ lists:List[]}) => {
+  blogList.value = lists
+}
+
 </script>
 
 <template>
   <div class="layout-main">
     <div class="layout-main__left">
-      <BlogList />
+      <BlogList :lists="blogList " />
     </div>
     <div class="layout-main__right">
       <Info />
       <RecommendList />
-      <TagLists />
+      <TagLists @classification="classification" />
     </div>
   </div>
 </template>
