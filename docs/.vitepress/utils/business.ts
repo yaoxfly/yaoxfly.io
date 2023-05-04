@@ -39,7 +39,7 @@ export const useList = () => {
       data.unshift(item)
     }
   })
-
+  data.push({ tag: '全部', color: '#333' })
   return {
     list,
     total: list.length,

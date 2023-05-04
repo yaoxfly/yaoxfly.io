@@ -4,7 +4,7 @@ import { useList } from '@/utils/business'
 const emit = defineEmits(['classification'])
 const { tags, list } = useList()
 const classification = (tag:string) => {
-  const lists = list.filter(item => item.tag === tag)
+  const lists = tag === '全部' ? list : list.filter(item => item.tag === tag)
   emit('classification', { tag, lists })
 }
 </script>
