@@ -23,8 +23,8 @@ export default [
             link: 'https://github.com/yaoxfly/vitepress-template'
           },
           {
-            text: 'npm-rollup-babel-template',
-            link: 'https://github.com/yaoxfly/npm-rollup-babel-template'
+            text: 'monorope-component',
+            link: 'https://github.com/yaoxfly/monorope-component'
           }
         ]
       },
