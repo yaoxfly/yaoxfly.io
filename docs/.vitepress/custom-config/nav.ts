@@ -25,6 +25,10 @@ export default [
           {
             text: 'monorope-component',
             link: 'https://github.com/yaoxfly/monorope-component'
+          },
+          {
+            text: 'npm-rollup-babel-template',
+            link: 'https://github.com/yaoxfly/npm-rollup-babel-template'
           }
         ]
       },

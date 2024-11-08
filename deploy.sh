@@ -24,7 +24,7 @@ git commit -m 'deploy'
 
 
 git push -f https://github.com/yaoxfly/yaoxfly.github.io.git master:main
-git push -f https://gitee.com/yaoxfly/yaoxfly.git master:master
+# git push -f https://gitee.com/yaoxfly/yaoxfly.git master:master
 
 cd -
 
